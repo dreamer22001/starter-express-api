@@ -63,7 +63,7 @@ module.exports = app => {
         return;
       }
       const indice = storeToken(token.toString(), url);
-      response.qrCode = url;
+      response.qrCode = url.split(',')[1];
       response.id = tokenList[indice - 1].id;
       console.log(tokenList);
       res.status(200).json(response);
